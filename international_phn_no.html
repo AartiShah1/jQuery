@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>International Telephone Input</title>
+
+  <!-- CSS for intl-tel-input -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+    }
+
+    input {
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>International Phone Number Input</h2>
+
+  <!-- Input field -->
+  <input id="phone" type="tel" name="phone" placeholder="Enter phone number" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- JS for intl-tel-input -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+
+  <script>
+    // Initialize the intlTelInput plugin
+    $(document).ready(function () {
+      const input = document.querySelector("#phone");
+
+      window.intlTelInput(input, {
+        initialCountry: "np", // Set Nepal as default country
+        separateDialCode: true, // Show dial code separately
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+      });
+    });
+  </script>
+
+</body>
+</html>
